@@ -235,6 +235,7 @@ deployed contract address on Sepolia is
 ## Videos - Phase 1- Mock Server for Testing APIs
 [![Watch the video](https://img.youtube.com/vi/_uZLIaKm8AM/0.jpg)](https://www.youtube.com/watch?v=_uZLIaKm8AM)
 
+## Videos - Phase 1- Loading the Sepolia Deployed Smart Contracts in REMIX
 [![Watch the video](https://img.youtube.com/vi/9Tzh0AxiAjY/0.jpg)](https://www.youtube.com/watch?v=9Tzh0AxiAjY)
 
 
