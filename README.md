@@ -6,6 +6,11 @@ The **Agentic Wallet** is a smart contract deployed on the Sepolia testnet. This
 - Backup wallet refilling.
 - Real-time balance retrieval.
 
+
+[![Watch this non Technical video as a first step](https://img.youtube.com/vi/XuIQLOs-gp8/0.jpg)](https://www.youtube.com/watch?v=XuIQLOs-gp8)
+
+
+
 This document contains all the necessary information, including deployed addresses and instructions, to interact with the wallet.
 
 ---
