@@ -1,7 +1,7 @@
-# Agentic Wallet - README
+# Wallet - README
 
 ## Overview
-The **Agentic Wallet** is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
+The ** Wallet** is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
 - Token transfer execution.
 - Backup wallet refilling.
 - Real-time balance retrieval.
@@ -28,7 +28,7 @@ This document contains all the necessary information, including deployed address
 
 ---
 
-## How to Interact with the Agentic Wallet
+## How to Interact with the _ Wallet
 
 ### 1. Prerequisites
 - Connect Metamask with sEPOLIA Test net and simply load the above 2 addresses on Remix IDE. You will have access to some functions to do basic interactions. 
