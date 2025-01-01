@@ -243,5 +243,9 @@ deployed contract address on Sepolia is
 ## Videos - Phase 1- Loading the Sepolia Deployed Smart Contracts in REMIX
 [![Watch the video](https://img.youtube.com/vi/9Tzh0AxiAjY/0.jpg)](https://www.youtube.com/watch?v=9Tzh0AxiAjY)
 
+## Videos - Phase 1- Quick Overview of the Python Code - Ai_wallet.py File
+[![Watch the video](https://img.youtube.com/vi/QuMBOZPl_7Y/0.jpg)](https://www.youtube.com/watch?v=QuMBOZPl_7Y)
+
+
 
 
