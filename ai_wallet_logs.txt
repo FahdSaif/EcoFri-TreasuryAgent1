@@ -1,0 +1,65 @@
+2024-12-28 20:18:46,212 - Wallet balance: 110.0 DAI, Gas price: 11.412848385 GWEI, DAI price: 0.999745 USD
+2024-12-28 20:18:46,213 - Error querying OpenAI: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-12-28 20:18:46,213 - AI Decision: Error in decision-making.
+2024-12-28 20:18:46,213 - No action taken.
+2024-12-28 20:19:48,651 - Wallet balance: 110.0 DAI, Gas price: 10.885368817 GWEI, DAI price: 0.999745 USD
+2024-12-28 20:19:48,651 - Error querying OpenAI: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-12-28 20:19:48,651 - AI Decision: Error in decision-making.
+2024-12-28 20:19:48,652 - No action taken.
+2024-12-28 20:20:51,071 - Wallet balance: 110.0 DAI, Gas price: 11.139684271 GWEI, DAI price: 0.999745 USD
+2024-12-28 20:20:51,071 - Error querying OpenAI: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-12-28 20:20:51,071 - AI Decision: Error in decision-making.
+2024-12-28 20:20:51,071 - No action taken.
+2024-12-28 20:39:33,454 - Wallet balance: 110.0 DAI, Gas price: 6.209420697 GWEI, DAI price: 1.0 USD
+2024-12-28 20:39:33,455 - Error querying OpenAI: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-12-28 20:39:33,455 - AI Decision: Error in decision-making.
+2024-12-28 20:39:33,455 - No action taken.
+2024-12-28 20:40:38,752 - Wallet balance: 110.0 DAI, Gas price: 5.924583727 GWEI, DAI price: 1.0 USD
+2024-12-28 20:40:38,753 - Error querying OpenAI: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2024-12-28 20:40:38,753 - AI Decision: Error in decision-making.
+2024-12-28 20:40:38,753 - No action taken.
