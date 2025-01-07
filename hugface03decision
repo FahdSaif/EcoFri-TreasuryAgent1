@@ -1,0 +1,45 @@
+pip install transformers torch requests web3
+pip install web3 transformers
+pip install torch torchvision torchaudio
+#this is working perfectly for the deciion making part of the script islated separetly everythong above is a bit of error .
+from transformers import pipeline
+
+# Hugging Face T5 model setup
+decision_model = pipeline("text2text-generation", model="t5-small")
+
+# Improved decision-making function
+def hugging_face_decision(prompt):
+    try:
+        result = decision_model(
+            prompt,
+            max_length=50,
+            temperature=0.7,  # More deterministic responses
+            repetition_penalty=2.0,
+            num_return_sequences=1,
+            truncation=True,
+        )
+        return result[0]["generated_text"]
+    except Exception as e:
+        print(f"Error generating decision: {e}")
+        return "Error"
+
+# Main test logic
+def test_decision():
+    decision_prompt = (
+        "You are a decision-making assistant for a payment system. "
+        "If wallet balance is sufficient and the API is active, respond with 'Make Payment'. "
+        "Otherwise, respond with 'No Action'."
+    )
+
+    decision = hugging_face_decision(decision_prompt)
+    print(f"Hugging Face Decision: {decision}")
+
+    if "make payment" in decision.lower():
+        print("Decision: Make Payment")
+    elif "no action" in decision.lower():
+        print("Decision: No Action")
+    else:
+        print("Decision: Unknown")
+
+if __name__ == "__main__":
+    test_decision()
