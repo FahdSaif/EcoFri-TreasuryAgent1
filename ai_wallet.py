@@ -15,7 +15,7 @@ if not web3.is_connected():
 # Contract and wallet details
 contract_address = "0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066"  # deployed smart contract address
 backup_wallet_address = "0x79438A85548Cd4f1E6FFd0A190274060B533fd01"  # backup wallet address
-backup_wallet_private_key = "7992894d806fce60a0b7bc8b57bd2bfa88ea0101d01f5b281a771652d89641d7"  # backup wallet private key
+backup_wallet_private_key = "ggg"  # backup wallet private key - no point using this - kept garbled or deleted account :) 
 
 abi =  [
 	{
