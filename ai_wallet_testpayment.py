@@ -12,10 +12,10 @@ web3 = Web3(Web3.HTTPProvider(infura_url))
 if not web3.is_connected():
     raise ConnectionError("Failed to connect to the Sepolia network. Check your Infura URL or internet connection.")
 
-# Contract and wallet things
+# Contract and wallet things- later to environment variables -
 contract_address = "0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066"  # Deployed smart contract address on sepolia - watch video to load it
 backup_wallet_address = "0x79438A85548Cd4f1E6FFd0A190274060B533fd01"  # Fahd's:Backup wallet address
-backup_wallet_private_key = "7992894d806fce60a0b7bc8b57bd2bfa88ea0101d01f5b281a771652d89641d7"  # Backup wallet private key: nEED TO PUT THIS IN AN Envirn=onment variable - later
+backup_wallet_private_key = "sss"  # no point reusing any - replace iwht yours will be garbled or deletedBackup wallet private key: nEED TO PUT THIS IN AN Envirn=onment variable - later
 api_owner_wallet = "0x222464B2c06d7be1644b8c8Ec04086233ef0663D"  # API owner's wallet : for now this is just one of my wallets - will be another user and his respective wallet
 postman_api_url = "https://f495ae9c-29fc-461f-8b53-1a12962c34cd.mock.pstmn.io/getdata"  # Postman mock server URL - not sure how long this is valid. :) 
 
