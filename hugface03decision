@@ -1,7 +1,7 @@
 pip install transformers torch requests web3
 pip install web3 transformers
 pip install torch torchvision torchaudio
-#this is working perfectly for the deciion making part of the script islated separetly everythong above is a bit of error .
+#this is working perfectly for the deciion making part of the script islated separetly everythong above is a bit of error . updating comments 
 from transformers import pipeline
 
 # Hugging Face T5 model setup
