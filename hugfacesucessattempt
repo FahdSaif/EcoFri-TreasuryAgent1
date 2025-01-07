@@ -1,0 +1,231 @@
+from web3 import Web3
+import requests
+import time
+from transformers import pipeline
+
+# Connect to Sepolia testnet via Infura
+#time 11:58 - this is stable from kings park efforts - NICE UNBOXED VIEW AWAY FROM THE CAVE SCENARY BRAIN PERFORMING BETTER
+infura_url = "https://sepolia.infura.io/v3/e0148fcea0d64bee8747c0717bab039e"  # Infura Project ID
+web3 = Web3(Web3.HTTPProvider(infura_url))
+
+# Ensure connection is established
+if not web3.is_connected():
+    raise ConnectionError("Failed to connect to the Sepolia network. Check your Infura URL or internet connection.")
+
+# Hugging Face Model Setup
+decision_model = pipeline("text-generation", model="t5-small")  # Using T5 for decision-making
+
+# Contract and wallet details
+contract_address = "0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066"  # Deployed smart contract address
+backup_wallet_address = "0x79438A85548Cd4f1E6FFd0A190274060B533fd01"  # Backup wallet address
+backup_wallet_private_key = "xxx"  # Backup wallet private key
+api_owner_wallet = "0x222464B2c06d7be1644b8c8Ec04086233ef0663D"  # API owner's wallet
+postman_api_url = "https://f495ae9c-29fc-461f-8b53-1a12962c34cd.mock.pstmn.io/getdata"  # Postman mock server URL
+
+# Smart contract ABI
+abi =  [
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			}
+		],
+		"name": "executeTransfer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "refillFromBackup",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_backupWallet",
+				"type": "address"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "backupWallet",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+
+token_address = "0xF469A33cd0B806AFDDCFA5CEA1d8Fe408ec43B9c"  # Test DAI contract address
+
+# Connect to the smart contract - take this out later not a good prac OT DO THIS
+contract = web3.eth.contract(address=contract_address, abi=abi)
+
+def call_api_and_pay(api_url, amount_dai):
+    #Call an API and pay the API owner
+    try:
+        print("Calling API...")
+        response = requests.get(api_url)
+        if response.status_code == 200:
+            print("API call successful. Processing payment...")
+
+            # Fetch wallet balance
+            #print("Token Address is =", token_address)
+            current_balance = contract.functions.getBalance(token_address).call() #-incorrect argument passed
+
+            #current_balance = contract.functions.getBalance().call() #check this segment of code with that file which is running **
+            print(f"Current wallet balance: {current_balance / (10 ** 18)} DAI")
+
+            if current_balance < amount_dai * (10 ** 18):
+                print("Insufficient funds in AI Wallet. Replenish before proceeding.")
+                return
+
+            # Build the transaction
+            transaction = contract.functions.executeTransfer(
+                token_address,
+                amount_dai * (10 ** 18),
+                api_owner_wallet
+            ).build_transaction({
+                'from': backup_wallet_address,
+                'nonce': web3.eth.get_transaction_count(backup_wallet_address),
+                'gas': 200000,
+                'gasPrice': web3.eth.gas_price
+            })
+
+            # Sign and send the transaction
+            signed_tx = web3.eth.account.sign_transaction(transaction, backup_wallet_private_key)
+            #tx_hash = web3.eth.send_raw_transaction(signed_tx.rawTransaction)
+            tx_hash = web3.eth.send_raw_transaction(signed_tx.raw_transaction)
+
+            print(f"Payment sent. Transaction hash: {web3.to_hex(tx_hash)}")
+        else:
+            print(f"API call failed. Status code: {response.status_code}")
+    except Exception as e:
+        print(f"Error: {e}")
+
+# Hugging Face decision-making
+def hugging_face_decision(prompt):
+    #Generate a decision using the Hugging Face model
+    try:
+        result = result = decision_model(
+            prompt,
+            max_length=50,
+            temperature=0.7,  # More deterministic responses
+            repetition_penalty=2.0,
+            num_return_sequences=1,
+            truncation=True,
+        )
+        return result[0]["generated_text"]
+    except Exception as e:
+        print(f"Error generating decision: {e}")
+        return "Error"
+
+#def parse_decision(decision):
+def parse_decision(decision):
+    #Parse the decision to determine the action
+    if "make payment" in decision.lower():
+        return "make_payment"
+    elif "no action" in decision.lower():
+        return "no_action"
+    else:
+        return "unknown"
+
+
+def monitor_and_act():
+    #Monitor wallet balance, make decisions, and act accordingly
+    payment_amount_dai = 1  # Amount of DAI to pay per API call
+    try:
+        while True:
+            print("Monitoring API and wallet...")
+
+            decision_prompt = (
+                "You are a decision-making assistant for a payment system. "
+                "If wallet balance is sufficient and the API is active, respond with 'Make Payment'. "
+                "Otherwise, respond with 'No Action'."
+            )
+
+            decision = hugging_face_decision(decision_prompt)
+            print(f"Hugging Face Decision: {decision}")
+
+            parsed_decision = parse_decision(decision)
+            if parsed_decision == "make_payment":
+                call_api_and_pay(postman_api_url, payment_amount_dai)
+            elif parsed_decision == "no_action":
+                print("No action taken based on decision.")
+            else:
+                print("Decision not understood. No action taken.")
+
+            time.sleep(60)
+    except KeyboardInterrupt:
+        print("Script interrupted by user.")
+
+if __name__ == "__main__":
+    print("Starting API interaction and payment monitoring...")
+    monitor_and_act()
