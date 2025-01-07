@@ -1,7 +1,7 @@
 # Wallet - README
 
 ## Overview
-The ** Wallet** is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
+The  Wallet is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
 - Token transfer execution.
 - Backup wallet refilling.
 - Real-time balance retrieval.
