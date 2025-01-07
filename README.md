@@ -20,7 +20,7 @@ This document contains all the necessary information, including deployed address
 ### Contract Addresses
 | Contract               | Address                                    |
 |------------------------|--------------------------------------------|
-| **AIEnhancedWallet**  | `0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066` |
+| ** Treasury Wallet - AIEnhancedWallet**  | `0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066` |
 | **TestDai.sol**        | `0xF469A33cd0B806AFDDCFA5CEA1d8Fe408ec43B9c` |
 
 ### Backup Wallet Address
@@ -221,7 +221,7 @@ deployed contract address
 configure yours e.g in Metamask or any other wallet provider
 
 
-**AIEnhancedWallet contract**
+**AIEnhancedWallet contract - Treasury Wallet - **
 https://sepolia.etherscan.io/tx/0xac173c9e73885e970a68713ffc066ea9e626a398f6b277a078ebd54112821993
 and 
 deployed contract address on Sepolia is 
