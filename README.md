@@ -20,7 +20,7 @@ This document contains all the necessary information, including deployed address
 ### Contract Addresses
 | Contract               | Address                                    |
 |------------------------|--------------------------------------------|
-| ** Treasury Wallet - AIEnhancedWallet**  | `0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066` |
+| Treasury Wallet - AIEnhancedWallet  | `0xd6f6df67Ba778a49BEa462b53bf8A473d7BD0066` |
 | **TestDai.sol**        | `0xF469A33cd0B806AFDDCFA5CEA1d8Fe408ec43B9c` |
 
 ### Backup Wallet Address
