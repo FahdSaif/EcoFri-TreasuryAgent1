@@ -1,4 +1,4 @@
-# Wallet - README
+# Treasury Wallet Agent - README
 
 ## Overview
 The  Wallet is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
