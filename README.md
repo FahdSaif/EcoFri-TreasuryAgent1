@@ -238,16 +238,16 @@ deployed contract address on Sepolia is
 ![Screen Shot 2024-12-30 at 11 51 32 am](https://github.com/user-attachments/assets/d64595b3-e4c9-4983-a10e-ba2f118e8b5e)
 
 
-## Videos - Phase 1- Python ML Agents doing the Test Dai Transactions
+## ## Click Video to play - Phase 1- Python ML Agents doing the Test Dai Transactions
 [![Watch the video](https://img.youtube.com/vi/dXe0ewu7QGs/0.jpg)](https://www.youtube.com/watch?v=dXe0ewu7QGs)
 
-## Videos - Phase 1- Mock Server for Testing APIs
+## ## Click Video to play - Phase 1- Mock Server for Testing APIs
 [![Watch the video](https://img.youtube.com/vi/_uZLIaKm8AM/0.jpg)](https://www.youtube.com/watch?v=_uZLIaKm8AM)
 
-## Videos - Phase 1- Loading the Sepolia Deployed Smart Contracts in REMIX
+## ## Click Video to play - Phase 1- Loading the Sepolia Deployed Smart Contracts in REMIX
 [![Watch the video](https://img.youtube.com/vi/9Tzh0AxiAjY/0.jpg)](https://www.youtube.com/watch?v=9Tzh0AxiAjY)
 
-## Videos - Phase 1- Quick Overview of the Python Code - Ai_wallet.py File
+## ## Click Video to play - Phase 1- Quick Overview of the Python Code - Ai_wallet.py File
 [![Watch the video](https://img.youtube.com/vi/QuMBOZPl_7Y/0.jpg)](https://www.youtube.com/watch?v=QuMBOZPl_7Y)
 
 
