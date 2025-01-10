@@ -1,5 +1,7 @@
 # Treasury Wallet Agent - README
 
+Disclaimer: All Private keys or others would have been chanGED they are only there for completion and recogition pruposes. No point reusing any. 
+
 ## Overview
 The  Wallet is a smart contract deployed on the Sepolia testnet. This wallet includes features such as:
 - Token transfer execution.
