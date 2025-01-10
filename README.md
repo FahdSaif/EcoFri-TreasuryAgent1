@@ -8,6 +8,7 @@ The  Wallet is a smart contract deployed on the Sepolia testnet. This wallet inc
 - Backup wallet refilling.
 - Real-time balance retrieval.
 
+## Click Video to play
 <a href="https://www.youtube.com/watch?v=XuIQLOs-gp8" target="_blank" title="Click to Play">
   <img src="https://img.youtube.com/vi/XuIQLOs-gp8/0.jpg" alt="Watch this non-Technical video as a first step">
 </a>
